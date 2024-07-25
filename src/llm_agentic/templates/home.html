@@ -1,0 +1,90 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<div class="grid gap-8">
+  <div class="grid gap-2">
+    <h1 class="text-3xl font-bold">Plan Your Next Adventure!</h1>
+    <p class="text-muted-foreground">Discover the best flights, hotels, and events for your upcoming trip.</p>
+  </div>
+  <div class="grid gap4">
+<div dir="ltr" data-orientation="horizontal">
+          <div
+            role="tablist"
+            aria-orientation="horizontal"
+            class="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground"
+            tabindex="0"
+            data-orientation="horizontal"
+            style="outline: none;"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="radix-:r8:-content-flights"
+              data-state="inactive"
+              id="radix-:r8:-trigger-flights"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+            >
+              Flights
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="radix-:r8:-content-hotels"
+              data-state="inactive"
+              id="radix-:r8:-trigger-hotels"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+            >
+              Hotels
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="radix-:r8:-content-events"
+              data-state="inactive"
+              id="radix-:r8:-trigger-events"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item=""
+            >
+              Events
+            </button>
+          </div>
+          <div
+            data-state="inactive"
+            data-orientation="horizontal"
+            role="tabpanel"
+            aria-labelledby="radix-:r8:-trigger-flights"
+            hidden=""
+            id="radix-:r8:-content-flights"
+            tabindex="0"
+            class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          ></div>
+          <div
+            data-state="inactive"
+            data-orientation="horizontal"
+            role="tabpanel"
+            aria-labelledby="radix-:r8:-trigger-hotels"
+            hidden=""
+            id="radix-:r8:-content-hotels"
+            tabindex="0"
+            class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          ></div>
+  </div>
+</div>
+{% endblock %}
+
