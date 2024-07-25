@@ -5,7 +5,8 @@ from langchain.tools import BaseTool
 from typing import Dict
 
 # Load environment variables from .env file
-dotenv_path = r'C:\Users\kboat\OneDrive\Desktop\GenAI\TravelAgent\.env'
+dotenv_path = os.path.join('../..', '.env')
+
 load_dotenv(dotenv_path)
 
 # Access environment variables
