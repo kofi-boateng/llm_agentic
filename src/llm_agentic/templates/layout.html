@@ -1,0 +1,158 @@
+
+<html>
+  <head>
+    <link rel="icon" href="/static/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The LLM Agentic Travel Agency!!">
+    <style>
+      :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 45%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --chart-1: 173 58% 39%;
+        --chart-2: 12 76% 61%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                  DEFAULT: 'hsl(var(--primary))',
+                  foreground: 'hsl(var(--primary-foreground))'
+              },
+              secondary: {
+                  DEFAULT: 'hsl(var(--secondary))',
+                  foreground: 'hsl(var(--secondary-foreground))'
+              },
+              destructive: {
+                  DEFAULT: 'hsl(var(--destructive))',
+                  foreground: 'hsl(var(--destructive-foreground))'
+              },
+              muted: {
+                  DEFAULT: 'hsl(var(--muted))',
+                  foreground: 'hsl(var(--muted-foreground))'
+              },
+              accent: {
+                  DEFAULT: 'hsl(var(--accent))',
+                  foreground: 'hsl(var(--accent-foreground))'
+              },
+              popover: {
+                  DEFAULT: 'hsl(var(--popover))',
+                  foreground: 'hsl(var(--popover-foreground))'
+              },
+              card: {
+                  DEFAULT: 'hsl(var(--card))',
+                  foreground: 'hsl(var(--card-foreground))'
+              },
+            },
+            borderRadius: {
+              xl: `calc(var(--radius) + 4px)`,
+              lg: `var(--radius)`,
+              md: `calc(var(--radius) - 2px)`,
+              sm: `calc(var(--radius) - 4px)`
+            },
+            keyframes: {
+              "accordion-down": {
+                  from: {height: 0},
+                  to: {height: "var(--radix-accordion-content-height)"}
+              },
+              "accordion-up": {
+                  from: {height: "var(--radix-accordion-content-height)"},
+                  to: {height: 0}
+              }
+            },
+            animation: {
+              "accordion-down": "accordion-down 0.2s ease-out",
+              "accordion-up": "accordion-up 0.2s ease-out"
+            },
+          },
+        },
+      }
+    </script>
+    <title>{% block title %}{% endblock %} | The LLM Agentic Travel Agency</title>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen">
+      <header class="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <a href="/" class="text-2xl font-bold">
+            The LLM Agentic Travel Agency
+          </a>
+          <nav class="hidden md:flex items-center gap-4">
+            <a href="#flights" class="hover:text-muted-foreground">Flights</a>
+            <a href="#hotels" class="hover:text-muted-foreground">Hotels</a>
+            <a href="#events" class="hover:text-muted-foreground">Events</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
+            type="button"
+            id="radix-:r6:"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            data-state="closed"
+          >
+            <span class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
+              <img class="aspect-square h-full w-full" src="/placeholder-user.jpg" />
+            </span>
+          </button>
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6"
+            >
+              <circle cx="12" cy="10" r="8"></circle>
+              <circle cx="12" cy="10" r="3"></circle>
+              <path d="M7 22h10"></path>
+              <path d="M12 22v-4"></path>
+            </svg>
+            <span class="sr-only">Chat</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex-1 grid grid-cols-[1fr_400px] gap-8 p-8">
+        {% block content %}
+        {% endblock %}
+      </main>
+    </div>
+  </body>
+</html>
+
