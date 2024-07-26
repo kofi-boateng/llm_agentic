@@ -20,6 +20,8 @@ dependencies = [
     "httpx>=0.27.0",
     "uvicorn>=0.30.3",
     "pydantic>=2.8.2",
+    "serpapi>=0.1.5",
+    "pygraphviz>=1.13",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -32,9 +34,12 @@ build-backend = "hatchling.build"
 managed = true
 dev-dependencies = [
     "ruff>=0.5.4",
+    "python-pip>=1.1.1",
 ]
 
 [tool.rye.scripts]
+code_notebooks="rye run jupyter lab --notebook-dir Code"
+travel_notebooks="rye run jupyter lab --notebook-dir Travel"
 travel_agency_dev = "uvicorn llm_agentic.travel_agency:app --reload"
 
 [tool.pyright]

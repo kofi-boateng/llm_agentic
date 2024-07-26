@@ -6,6 +6,8 @@
 #   features: []
 #   all-features: false
 #   with-sources: false
+#   generate-hashes: false
+#   universal: false
 
 -e file:.
 aiohttp==3.9.5
@@ -274,6 +276,8 @@ pygments==2.18.0
     # via ipython
     # via nbconvert
     # via rich
+pygraphviz==1.13
+    # via llm-agentic
 python-dateutil==2.9.0.post0
     # via arrow
     # via jupyter-client
@@ -285,6 +289,7 @@ python-json-logger==2.0.7
     # via jupyter-events
 python-multipart==0.0.9
     # via fastapi
+python-pip==1.1.1
 pyyaml==6.0.1
     # via fastapi
     # via jupyter-events
@@ -307,6 +312,7 @@ requests==2.32.3
     # via langchain
     # via langchain-community
     # via langsmith
+    # via serpapi
     # via tavily-python
     # via tiktoken
 rfc3339-validator==0.1.4
@@ -323,6 +329,8 @@ rpds-py==0.19.1
 ruff==0.5.4
 send2trash==1.8.3
     # via jupyter-server
+serpapi==0.1.5
+    # via llm-agentic
 setuptools==71.1.0
     # via jupyterlab
 shellingham==1.5.4

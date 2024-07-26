@@ -6,6 +6,8 @@
 #   features: []
 #   all-features: false
 #   with-sources: false
+#   generate-hashes: false
+#   universal: false
 
 -e file:.
 aiohttp==3.9.5
@@ -274,6 +276,8 @@ pygments==2.18.0
     # via ipython
     # via nbconvert
     # via rich
+pygraphviz==1.13
+    # via llm-agentic
 python-dateutil==2.9.0.post0
     # via arrow
     # via jupyter-client
@@ -307,6 +311,7 @@ requests==2.32.3
     # via langchain
     # via langchain-community
     # via langsmith
+    # via serpapi
     # via tavily-python
     # via tiktoken
 rfc3339-validator==0.1.4
@@ -322,6 +327,8 @@ rpds-py==0.19.1
     # via referencing
 send2trash==1.8.3
     # via jupyter-server
+serpapi==0.1.5
+    # via llm-agentic
 setuptools==71.1.0
     # via jupyterlab
 shellingham==1.5.4
