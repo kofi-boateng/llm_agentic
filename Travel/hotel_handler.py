@@ -5,28 +5,31 @@ from langchain.tools import BaseTool
 from serpapi import search
 from typing import Dict, Any
 
+from google.colab import userdata
+HOTEL_API_KEY = userdata.get('SERPAPI_API_KEY')
+
 # Load environment variables from .env file
-dotenv_path = os.path.join('..', '..', '.env')  # Adjusted path for Windows compatibility
-load_dotenv(dotenv_path)
+# dotenv_path = os.path.join('..', '..', '.env')  # Adjusted path for Windows compatibility
+# load_dotenv(dotenv_path)
 
 # Access environment variables
-HOTEL_API_KEY = os.getenv('SERPAPI_API_KEY')
+# HOTEL_API_KEY = os.getenv('SERPAPI_API_KEY')
 
 # Check if API key is loaded correctly
 if not HOTEL_API_KEY:
     raise ValueError("API key not found. Please check your .env file.")
 
-# def search(params: Dict) -> Dict:
-#     try:
-#         response = requests.get('https://serpapi.com/search.json', params=params)
-#         response.raise_for_status()  # Raises HTTPError for bad responses
-#         return response.json()  # Return JSON response if successful
-#     except requests.exceptions.HTTPError as e:
-#         print(f"HTTPError: {e}")
-#         raise
-#     except requests.exceptions.RequestException as e:
-#         print(f"RequestException: {e}")
-#         raise
+def search(params: Dict) -> Dict:
+    try:
+        response = requests.get('https://serpapi.com/search.json', params=params)
+        response.raise_for_status()  # Raises HTTPError for bad responses
+        return response.json()  # Return JSON response if successful
+    except requests.exceptions.HTTPError as e:
+        print(f"HTTPError: {e}")
+        raise
+    except requests.exceptions.RequestException as e:
+        print(f"RequestException: {e}")
+        raise
 
 class Hotels(BaseTool):
     name: str = "hotels_tool"
@@ -66,18 +69,18 @@ class Hotels(BaseTool):
         overall_rating = dictionary.get('overall_rating', 'N/A')
         return {'property_name': name, 'rate_per_night': rate, 'rating': overall_rating}
 
-if __name__ == "__main__":
-    print("In hotel")
-    hotels_tool = Hotels()
+# if __name__ == "__main__":
+#     print("In hotel")
+#     hotels_tool = Hotels()
 
-    # Define the query parameters as a dictionary
-    query_parameters = {
-        'q': 'New York City',
-        'check_in_date': '2024-07-27',
-        'check_out_date': '2024-07-30',
-        'currency': 'USD'
-    }
+#     # Define the query parameters as a dictionary
+#     query_parameters = {
+#         'q': 'New York City',
+#         'check_in_date': '2024-07-27',
+#         'check_out_date': '2024-07-30',
+#         'currency': 'USD'
+#     }
 
-    # Pass the entire dictionary directly to invoke
-    response = hotels_tool.invoke({'query': query_parameters})
-    print(response)
+#     # Pass the entire dictionary directly to invoke
+#     response = hotels_tool.invoke({'query': query_parameters})
+#     print(response)

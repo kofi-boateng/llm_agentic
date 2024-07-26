@@ -2,17 +2,21 @@ import os
 import requests
 from dotenv import load_dotenv
 from langchain.tools import BaseTool
+# from serpapi import search
 from typing import Dict
 
-# Load environment variables from .env file
-dotenv_path = os.path.join('../..', '.env')
+from google.colab import userdata
+FLIGHT_API_KEY = userdata.get('SERPAPI_API_KEY')
 
-load_dotenv(dotenv_path)
+# Load environment variables from .env file
+# dotenv_path = os.path.join('../..', '.env')
+
+# load_dotenv(dotenv_path)
 
 # Access environment variables
-FLIGHT_API_KEY = os.getenv('SERPAPI_API_KEY')
+# FLIGHT_API_KEY = os.getenv('SERPAPI_API_KEY')
 
-print(f'Key: {FLIGHT_API_KEY}')
+# print(f'Key: {FLIGHT_API_KEY}')
 
 # Check if API key is loaded correctly
 if not FLIGHT_API_KEY:
@@ -72,19 +76,19 @@ class Flights(BaseTool):
                 'Duration': total_duration,
                 'price': price}
 
-if __name__ == "__main__":
-    print("In flight")
-    flights_tool = Flights()
+# if __name__ == "__main__":
+#     print("In flight")
+#     flights_tool = Flights()
 
-    # Define the query parameters as a dictionary
-    query_parameters = {
-        'origin': 'ATL',
-        'destination': 'JFK',
-        'departure_date': '2024-07-27',
-        'return_date': '2024-07-30',
-        'currency': 'USD'
-    }
+#     # Define the query parameters as a dictionary
+#     query_parameters = {
+#         'origin': 'ATL',
+#         'destination': 'JFK',
+#         'departure_date': '2024-07-27',
+#         'return_date': '2024-07-30',
+#         'currency': 'USD'
+#     }
 
-    # Pass the entire dictionary as a single positional argument to invoke
-    response = flights_tool.invoke({'query': query_parameters})
-    print(response)
+#     # Pass the entire dictionary as a single positional argument to invoke
+#     response = flights_tool.invoke({'query': query_parameters})
+#     print(response)
