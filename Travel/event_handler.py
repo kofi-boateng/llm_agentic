@@ -1,16 +1,19 @@
 import os
 import requests
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from langchain.tools import BaseTool
 from serpapi import search
 from typing import Dict, Any
 
 # Load environment variables from .env file
-dotenv_path = os.path.join('..', '..', '.env')  # Adjusted path for Windows compatibility
-load_dotenv(dotenv_path)
+# dotenv_path = os.path.join('..', '..', '.env')  # Adjusted path for Windows compatibility
+# load_dotenv(dotenv_path)
 
 # Access environment variables
-EVENT_API_KEY = os.getenv('SERPAPI_API_KEY')
+# EVENT_API_KEY = os.getenv('SERPAPI_API_KEY')
+
+from google.colab import userdata
+EVENT_API_KEY = userdata.get('SERPAPI_API_KEY')
 
 # Check if API key is loaded correctly
 if not EVENT_API_KEY:
@@ -63,17 +66,17 @@ class Events(BaseTool):
         address = dictionary.get('address', 'N/A')
         return {'Title': title, 'start_date': start_date, 'address': address}
 
-if __name__ == "__main__":
-    print("In Event")
-    events_tool = Events()
+# if __name__ == "__main__":
+#     print("In Event")
+#     events_tool = Events()
 
-    # Define the query parameters as a dictionary
-    query_parameters = {
-        'q': 'New York City',
-        'hl': "en",
-        'g': "us",
-    }
+#     # Define the query parameters as a dictionary
+#     query_parameters = {
+#         'q': 'New York City',
+#         'hl': "en",
+#         'g': "us",
+#     }
 
-    # Pass the entire dictionary directly to invoke
-    response = events_tool.invoke({'query': query_parameters})
-    print(response)
+#     # Pass the entire dictionary directly to invoke
+#     response = events_tool.invoke({'query': query_parameters})
+#     print(response)
