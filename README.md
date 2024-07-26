@@ -41,4 +41,3 @@ rye add pygraphviz
 
 ```
 
->>>>>>> develop
